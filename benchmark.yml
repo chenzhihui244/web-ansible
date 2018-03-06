@@ -1,0 +1,28 @@
+---
+- hosts: nginx-client
+
+  roles:
+    - common
+
+  vars:
+    threads: 8
+    connections: 32
+    requests: 128000
+    server: 192.168.1.193
+    target_url: "http://{{ server }}/index.html"
+
+  tasks:
+  - name: preparation
+    shell:
+      ulimit -n {{ connections }}
+      
+  - name: httpress webserver benchmark
+    shell:
+      export LD_LIBRARY_PATH={{ installdir }}/lib:$LD_LIBRARY_PATH;
+      {{ installdir }}/bin/httpress -n {{ requests }} -c {{ connections }} -t {{ threads }} {{ target_url }} > /tmp/httpress-nginx.log
+
+  - name: fetch result
+    fetch:
+      src=/tmp/httpress-nginx.log
+      dest=/tmp/httpress-nginx.log
+      flat=yes

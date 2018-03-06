@@ -1,0 +1,6 @@
+---
+# defaults file for common
+topdir: /local/ansible
+builddir: "{{ topdir }}/build"
+pkgsdir: "{{ topdir }}/pkgs"
+installdir: "{{ topdir }}/install"

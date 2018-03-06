@@ -1,0 +1,6 @@
+---
+- hosts: nginx-client
+#  vars:
+#    topdir: /local/ansible
+  roles:
+    - httpress

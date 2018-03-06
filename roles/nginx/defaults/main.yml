@@ -1,0 +1,12 @@
+---
+# defaults file for nginx
+nginx_url: http://nginx.org/download/nginx-1.13.9.tar.gz
+nginx_user: "{{ ansible_user_id }}"
+
+# nginx.conf
+nginx_worker_processes: "{{ ansible_processor_count }}"
+nginx_pid_path: /run/nginx.pid
+nginx_worker_connections: 1024
+nginx_keepalive_timeout: 65
+nginx_listen_port: 80
+nginx_server_name: nginx-server

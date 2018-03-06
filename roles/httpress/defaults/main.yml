@@ -1,0 +1,4 @@
+---
+# defaults file for httpress
+httpress_url: https://bitbucket.org/yarosla/httpress/get/f27fa1949044.zip
+httpress_dir: yarosla-httpress-f27fa1949044

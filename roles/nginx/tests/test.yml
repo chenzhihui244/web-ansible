@@ -1,0 +1,5 @@
+---
+- hosts: nginx-server
+  remote_user: root
+  roles:
+    - nginx

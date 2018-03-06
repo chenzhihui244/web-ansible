@@ -1,0 +1,3 @@
+---
+# defaults file for libev
+libev_url: https://github.com/enki/libev.git
